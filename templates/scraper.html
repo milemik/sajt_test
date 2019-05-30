@@ -60,8 +60,12 @@
 <br />
 
 <main role="main">
+  <br />
+  <h4>Please enter what are you looking for and where in this format</h4>
+  <p>search term, city</p>
+  <br />
   <form action="{% url 'scraping_results.html' %}">
-    <textarea name="fulltext" rows="10" cols="40"></textarea>
+    <textarea name="fulltext" rows="1" cols="40"></textarea>
     <br />
     <input type="submit" value="Count!"/>
   </form>

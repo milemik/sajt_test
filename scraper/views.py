@@ -5,4 +5,5 @@ def scraper(request):
 	return render(request, 'scraper.html')
 
 def scraping_results(request):
-	return render(request, 'scraping_results.html')
+	fulltext = request.GET['fulltext']
+	return render(request, 'scraping_results.html', {"fulltext": fulltext})
