@@ -66,8 +66,14 @@
   <br />
   <h3>{{ fulltext }}</h3>
 
+  {% for i in rezultat %}
+  <div>
+    <p>{{ i }}</p>
+  </div>
+  {% endfor %}
+
   <!-- FOOTER -->
-  <footer class="container">
+  <footer class="container center">
     <p>&copy; 2019 Mileta</p>
   </footer>
 </main>
