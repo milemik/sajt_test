@@ -79,7 +79,7 @@ def selenium_scrap(search_term):
 				next_page = driver.find_element_by_xpath('//*[@id="n7lv7yjyC35__section-pagination-button-next"]').click()
 				num = 0
 				sleep(5)
-			except ElementClickInterceptedException as e:
+			except (ElementClickInterceptedException, NoSuchElementException) as e:
 				print(e)
 				break
 
@@ -97,4 +97,6 @@ def scraper(request):
 def scraping_results(request):
 	fulltext = request.GET['fulltext']
 	RESULTS = selenium_scrap(fulltext)
+	if len(RESULTS)<1:
+		RESULTS = ['No results for your search, please try some other terms']
 	return render(request, 'scraping_results.html', {"fulltext": fulltext, 'rezultat': RESULTS})
