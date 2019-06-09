@@ -51,7 +51,8 @@ def selenium_scrap(search_term):
 			except NoSuchElementException:
 				rating = 'Nema rejting'
 			try:
-				num_rating = driver.find_element_by_xpath('/html/body/jsl/div[3]/div[7]/div[9]/div/div[1]/div/div/div[2]/div[3]/div[2]/div/div[1]/span[3]/ul/li/span[2]/span[1]/button').text
+				#num_rating = driver.find_element_by_xpath('/html/body/jsl/div[3]/div[7]/div[9]/div/div[1]/div/div/div[2]/div[3]/div[2]/div/div[1]/span[3]/ul/li/span[2]/span[1]/button').text
+                                num_rating = driver.find_element_by_class_name('widget-pane-link').text
 			except NoSuchElementException:
 				num_rating = 0
 			print(f"Rating: {rating}, number of rates: {num_rating}")

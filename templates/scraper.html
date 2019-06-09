@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+	  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>   
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -64,15 +65,16 @@
   <form action="{% url 'scraping_results.html' %}">
     <textarea name="fulltext" rows="1" cols="40"></textarea>
     <br />
-    <input type="submit" value="FIND!" id='button'/>
+    <input type="submit" value="FIND!" id='button' onClick="$('#loading').show();"/>
   </form>
-
+<div id="loading" style="display:none;"><img src="loading.gif" alt="" />Loading...</div>
 
   <!-- FOOTER -->
   <footer class="container">
     <p>&copy; 2019 Mileta</p>
   </footer>
 </main>
+<!--
 <script>
   var p = document.getElementById("button"); // Find the paragraph element in the page
   p.onclick = showAlert; // Add onclick function to element
@@ -81,6 +83,7 @@
     alert("Starting scraper, please wait for scraper to collect the data... Click ok to continue");
   }
 </script>
+-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
